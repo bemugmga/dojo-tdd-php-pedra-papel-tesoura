@@ -1,0 +1,4 @@
+php:
+  image: pedromazala/php:7.1-fpm-develop
+  volumes:
+    - ./:/var/www/html
