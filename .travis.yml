@@ -1,0 +1,19 @@
+dist: trusty
+sudo: false
+
+language: php
+
+php:
+  - 7.1
+
+install:
+  - composer validate --no-check-all --no-check-publish
+  - composer --optimize-autoloader install
+
+script: >
+    vendor/bin/phpunit test.php
+cache:
+  apt: true
+  directories:
+    - $TRAVIS_BUILD_DIR/vendor
+    - $HOME/.composer/cache
