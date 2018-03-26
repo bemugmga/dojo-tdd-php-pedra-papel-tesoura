@@ -8,7 +8,22 @@
 //namespace App;
 
 class Jogo {
+
+    private const VALID_OPTIONS = [
+        Opcao::PEDRA,
+        Opcao::PAPEL,
+        Opcao::TESOURA,
+    ];
+
     public function joga ($opcao1, $opcao2): int {
+
+        if (
+            !in_array($opcao1, self::VALID_OPTIONS, true)
+            ||
+            !in_array($opcao1, self::VALID_OPTIONS, true)
+        ) {
+            return Opcao::INVALIDO;
+        }
 
         if ($opcao1 == $opcao2) {
             return Opcao::EMPATE;
